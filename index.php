@@ -10,30 +10,6 @@
 </head>
 
 <body>
-    <?php
-    include_once 'db.php';
-    if ($mysqli->connect_errno) {
-        echo "Failed to connect to MySQL: " . $mysqli->connect_error;
-        exit();
-    }
-    $mysqli->query("CREATE TABLE IF NOT EXISTS users (
-    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(30) NOT NULL,
-    lastname VARCHAR(30) NOT NULL,
-    motherlastname VARCHAR(30) NOT NULL,
-    register INT(6) UNSIGNED NOT NULL
-    career VARCHAR(30) NOT NULL,
-    email VARCHAR(30) NOT NULL,
-    password VARCHAR(30) NOT NULL
-)");
-    $mysqli->query("CREATE TABLE IF NOT EXISTS courses (
-    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(30) NOT NULL,
-    teacher VARCHAR(30) NOT NULL,
-    period VARCHAR(30) NOT NULL,
-    partials INT(6) UNSIGNED NOT NULL,
-)");
-    ?>
     <h2>Iniciar sesión</h2>
     <form action="login.php" method="post" class="form">
         <label for="user">Correo electrónico</label>
@@ -42,15 +18,15 @@
         <input type="password" name="pass" id="pass">
         <input type="submit" value="Iniciar sesión">
     </form>
-    <a href="form-register.php">Registerse</a>
+    <a href="form-register.php">Register</a>
     <h2>Registrarse</h2>
     <form action="register.php" method="post" class="form">
         <label for="username">Nombre</label>
         <input type="text" name="username" id="username">
         <label for="lastname">Apellido paterno</label>
         <input type="text" name="lastname" id="lastname">
-        <label for="motherlastname">Apellido materno</label>
-        <input type="text" name="motherlastname" id="motherlastname">
+        <label for="mother-lastname">Apellido materno</label>
+        <input type="text" name="mother-lastname" id="mother-lastname">
         <label for="register">Matrícula</label>
         <input type="text" name="register" id="register">
         <label for="career">Carrera</label>
