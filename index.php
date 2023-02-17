@@ -10,19 +10,18 @@
 </head>
 
 <body>
-    <h2>Iniciar sesión</h2>
-    <form action="login.php" method="post" class="form">
-        <label for="user">Correo electrónico</label>
-        <input type="text" name="user" id="user">
-        <label for="pass">Contraseña</label>
-        <input type="password" name="pass" id="pass">
+    <form action="login.php" id="form-login" class="form">
+        <h2>Iniciar sesión</h2>
+        <label for="email">Correo electrónico</label>
+        <input type="text" name="email" id="email">
+        <label for="password">Contraseña</label>
+        <input type="password" name="password" id="password">
         <input type="submit" value="Iniciar sesión">
     </form>
-    <a href="form-register.php">Register</a>
-    <h2>Registrarse</h2>
-    <form action="register.php" method="post" class="form">
-        <label for="username">Nombre</label>
-        <input type="text" name="username" id="username">
+    <form action="register.php" id="form-register" class="form">
+        <h2>Registrarse</h2>
+        <label for="name">Nombre</label>
+        <input type="text" name="name" id="name">
         <label for="lastname">Apellido paterno</label>
         <input type="text" name="lastname" id="lastname">
         <label for="mother-lastname">Apellido materno</label>
@@ -37,6 +36,28 @@
         <input type="password" name="password" id="password">
         <input type="submit" value="Registrarse">
     </form>
+
+    <button id="send-request">Send request</button>
 </body>
+<script>
+    document.getElementById('form-login').addEventListener('submit', function(evt) {
+        evt.preventDefault();
+        const client = new XMLHttpRequest();
+        client.open('GET', 'api/auth.php', true);
+        client.send(new FormData(evt.target));
+        client.onload = function() {
+            console.log(this.response);
+        }
+    });
+    document.getElementById('form-register').addEventListener('submit', function(evt) {
+        evt.preventDefault();
+        const client = new XMLHttpRequest();
+        client.open('POST', 'api/auth.php', true);
+        client.send(new FormData(evt.target));
+        client.onload = function() {
+            console.log(this.response);
+        }
+    });
+</script>
 
 </html>
