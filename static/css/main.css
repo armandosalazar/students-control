@@ -1,0 +1,38 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Euclid Circular A', sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #fff;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    padding: 20px 50px;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+header a {
+    color: #333;
+    text-decoration: none;
+}
+
+main {
+    padding: 50px;
+}
+
+.alert {
+    background-color: #f2dede;
+    color: #a94442;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
