@@ -24,6 +24,12 @@ header a {
     text-decoration: none;
 }
 
+header nav span {
+    cursor: pointer;
+    text-decoration: underline;
+    margin-right: 10px;
+}
+
 main {
     padding: 50px;
 }
@@ -74,4 +80,21 @@ main {
 
 .modal-alert p {
     margin-top: 20px;
+}
+
+table {
+    width: 80vw;
+    border-collapse: collapse;
+    margin: 20px auto;
+}
+
+table th {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+table td {
+    padding: 10px;
+    border-bottom: 1px solid #e7e7e7;
 }

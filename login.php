@@ -32,8 +32,9 @@
         client.send(new FormData(evt.target));
         client.onload = function () {
             if (this.status === 200) {
-                const {token} = JSON.parse(this.response);
+                const {token, email} = JSON.parse(this.response);
                 document.cookie = `token=${token}`;
+                document.cookie = `email=${email}`;
                 window.location = 'home.php'
             } else {
                 document.getElementById('modal').style.display = 'grid';

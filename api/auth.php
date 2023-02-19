@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $result = $connection->query($sql);
         if ($result->num_rows > 0) {
             header("HTTP/1.1 200 OK");
-            echo json_encode(['status' => 'ok', 'token' => generateToken($email), 'verify' => validateToken(generateToken($email))]);
+            echo json_encode(['status' => 'ok', 'token' => generateToken($email), 'email' => $email, 'verify' => validateToken(generateToken($email))]);
         } else {
             header("HTTP/1.1 404 Not Found");
             echo json_encode(['status' => 'error']);
